@@ -1,16 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="mbc.fonfon.sun.solomonschoice.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:id="@+id/searchLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/selectmenu"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="#FFFFFF"
+            android:text="솔로몬의 선택"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center|left"
+            android:layout_marginLeft="10dp"
+            android:textColor="#FF0000"
+            android:id="@+id/solmon"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/arrow_down_float"
+            android:layout_toRightOf="@+id/solmon"
+            android:id="@+id/icon"
+            />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/ic_menu_search"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="#ff555f"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/frag_container_"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                ></ScrollView>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="아래쪽의 아이콘을 클릭/드래그하세요." />
+
+            <SlidingDrawer
+                android:id="@+id/slide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:allowSingleTap="true"
+                android:animateOnClick="true"
+                android:bottomOffset="5dp"
+                android:content="@+id/content"
+                android:handle="@+id/handle"
+                android:orientation="vertical"
+                android:topOffset="100dp"
+                >
+                <ImageView
+                    android:id="@+id/handle"
+                    android:src="@drawable/home_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <LinearLayout
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFFFF"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SlidingDrawer의 content 부분입니다."
+                        android:textColor="#000000"
+                        />
+                    <Button
+                        android:id="@+id/btnclose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="닫기"
+                        />
+                </LinearLayout>
+            </SlidingDrawer>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#f2f7fd"
+        android:outlineProvider="bounds">
+
+        <ImageView
+            android:id="@+id/homebtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/home_icon"
+            />
+
+        <ImageView
+            android:id="@+id/bestbtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/best_icon"
+            />
+
+        <ImageView
+            android:id="@+id/alrambtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/alert_icon"
+            />
+
+        <ImageView
+            android:id="@+id/mypagebtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:src="@drawable/mypage_icon"
+            />
+    </LinearLayout>
+
+</LinearLayout>
