@@ -7,88 +7,19 @@
     tools:context="mbc.fonfon.sun.solomonschoice.MainActivity">
 
     <LinearLayout
-        android:id="@+id/selectmenu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:padding="5dp" >
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="솔로몬의 글투표"
-            android:id="@+id/first"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="솔로몬의 토론"
-            android:id="@+id/second"/>
-
+        android:layout_weight="9"
+        android:id="@+id/content"
+        >
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:background="#FFFFFF"
-        android:id="@+id/title">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/selectTitle"
-            android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            android:background="#FFFFFF"
-            android:text="솔로몬의 사진투표"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:gravity="center|left"
-            android:layout_marginLeft="10dp"
-            android:textColor="#FF0000"
-            android:id="@+id/solmon"
-            />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@android:drawable/arrow_down_float"
-            android:layout_toRightOf="@+id/solmon"
-            android:id="@+id/icon"
-            />
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@android:drawable/ic_menu_search"
-            android:layout_alignParentRight="true"
-            />
-    </RelativeLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
-        android:background="#ff555f"
-        android:orientation="vertical"
-        android:id="@+id/content">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ScrollView>
-    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#f2f7fd"
+        android:background="#EAEAEA"
         android:outlineProvider="bounds">
 
         <ImageView
@@ -97,7 +28,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/home_icon"
+            android:src="@drawable/home2"
             />
 
         <ImageView
@@ -115,7 +46,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/alert_icon"
+            android:src="@drawable/alram_icon"
             />
 
         <ImageView

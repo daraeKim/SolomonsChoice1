@@ -1,134 +1,141 @@
 package mbc.fonfon.sun.solomonschoice;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView homebtn;
-    ImageView bestbtn;
-    ImageView alrambtn;
-    ImageView mypagebtn;
-    LinearLayout selectTitle;
-    FrameLayout content;
+public class MainActivity extends AppCompatActivity implements OnClickListener{
+
+    //import android.support.v4.app.Fragment;
+
+    //import android.support.v4.app.FragmentTransaction;
+    ImageView homebtn, bestbtn, alrambtn, mypagebtn;
+    int selectFragment;
+
+    public final static int FRAGMENT_HOME = 0;
+    public final static int FRAGMENT_BEST = 1;
+    public final static int FRAGMENT_ALRAM = 2;
+    public final static int FRAGMENT_MYPAGE = 3;
+
+    /*LinearLayout selectTitle;
+    LinearLayout content;
     boolean viewGroupIsVisible = false;
     TextView solmon;
     LinearLayout selectmenu;
     Button first, second;
-////
+    //MainBoard mainboard;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        first = (Button) findViewById(R.id.first);
-        second = (Button) findViewById(R.id.second);
-        solmon = (TextView) findViewById(R.id.solmon);
-
         homebtn = (ImageView) findViewById(R.id.homebtn);
-        homebtn.setOnClickListener(this);
-
         bestbtn = (ImageView) findViewById(R.id.bestbtn);
-        bestbtn.setOnClickListener(this);
-
         alrambtn = (ImageView) findViewById(R.id.alrambtn);
-        alrambtn.setOnClickListener(this);
-
         mypagebtn = (ImageView) findViewById(R.id.mypagebtn);
+
+        homebtn.setOnClickListener(this);
+        bestbtn.setOnClickListener(this);
+        alrambtn.setOnClickListener(this);
         mypagebtn.setOnClickListener(this);
 
-        selectmenu = (LinearLayout) findViewById(R.id.selectmenu);
+        selectFragment = FRAGMENT_HOME;
 
-        selectmenu.setVisibility(View.GONE);
+        fragmentReplace(selectFragment);
 
-        content = (FrameLayout) findViewById(R.id.content);
-        content.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (viewGroupIsVisible) {
-                    selectmenu.setVisibility(View.GONE);
-                    viewGroupIsVisible = false;
-                }
-            }
-        });
-        selectTitle = (LinearLayout) findViewById(R.id.selectTitle);
-        selectTitle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (viewGroupIsVisible) {
-                    selectmenu.setVisibility(View.GONE);
-                    viewGroupIsVisible = false;
-                } else {
-                    selectmenu.setVisibility(View.VISIBLE);
-                    first.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            String text = (String) first.getText();
-                            first.setText(solmon.getText());
-                            solmon.setText(text);
-                            selectmenu.setVisibility(View.GONE);
-                            viewGroupIsVisible = !viewGroupIsVisible;
-                        }
-                    });
+    }
 
-                    second.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            String text = (String) second.getText();
-                            second.setText(solmon.getText());
-                            solmon.setText(text);
-                            selectmenu.setVisibility(View.GONE);
-                            viewGroupIsVisible = !viewGroupIsVisible;
-                        }
-                    });
+    public void fragmentReplace(int reqNewFragmentIndex) {
 
+        Fragment newFragment = null;
 
-                    viewGroupIsVisible = true;
+        newFragment = getFragment(reqNewFragmentIndex);
 
-                }
+        // replace fragment
+        final FragmentTransaction transaction = getSupportFragmentManager()
+                .beginTransaction();
 
-            }
-        });
+        transaction.replace(R.id.content, newFragment);
+
+        // Commit the transaction
+        transaction.commit();
+
+    }
+
+    private Fragment getFragment(int idx) {
+        Fragment newFragment = null;
+
+        switch (idx) {
+            case FRAGMENT_HOME:
+                newFragment = new MainBoard();
+                break;
+            case FRAGMENT_BEST:
+                newFragment = new Bestboard();
+                break;
+            case FRAGMENT_ALRAM:
+                newFragment = new Alramboard();
+                break;
+            case FRAGMENT_MYPAGE:
+                newFragment = new Mypage();
+                break;
+        }
+
+        return newFragment;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.homebtn:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.content, new Photoboard())
-                        .commit();
+                selectFragment = FRAGMENT_HOME;
+                fragmentReplace(selectFragment);
                 break;
 
             case R.id.bestbtn:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.content, new Bestboard())
-                        .commit();
+                selectFragment = FRAGMENT_BEST;
+                fragmentReplace(selectFragment);
                 break;
 
             case R.id.alrambtn:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.content, new Alramboard())
-                        .commit();
+                selectFragment = FRAGMENT_ALRAM;
+                fragmentReplace(selectFragment);
                 break;
 
             case R.id.mypagebtn:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.content, new Mypage())
-                        .commit();
+                selectFragment = FRAGMENT_MYPAGE;
+                fragmentReplace(selectFragment);
                 break;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        String alertTitle = getResources().getString(R.string.app_name);
+        String buttonMessage = getResources().getString(R.string.msg);
+        String buttonYes = getResources().getString(R.string.btn_yes);
+        String buttonNo = getResources().getString(R.string.btn_no);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(alertTitle);
+        builder.setMessage(buttonMessage);
+        builder.setNegativeButton(buttonNo, null);
+        builder.setPositiveButton(buttonYes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+                moveTaskToBack(true);
+                finish();
+            }
+        });
+
+        builder.show();
+    }
 }
-
-
