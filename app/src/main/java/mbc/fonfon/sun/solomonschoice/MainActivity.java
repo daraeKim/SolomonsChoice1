@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
         homebtn = (ImageView) findViewById(R.id.homebtn);
         bestbtn = (ImageView) findViewById(R.id.bestbtn);
-        alrambtn = (ImageView) findViewById(R.id.alrambtn);
+        alrambtn = (ImageView) findViewById(R.id.writebtn);
         mypagebtn = (ImageView) findViewById(R.id.mypagebtn);
 
         homebtn.setOnClickListener(this);
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
                 fragmentReplace(selectFragment);
                 break;
 
-            case R.id.alrambtn:
+            case R.id.writebtn:
                 selectFragment = FRAGMENT_ALRAM;
                 fragmentReplace(selectFragment);
                 break;

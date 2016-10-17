@@ -41,12 +41,12 @@
             />
 
         <ImageView
-            android:id="@+id/alrambtn"
+            android:id="@+id/writebtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:src="@drawable/alram_icon"
+            android:src="@drawable/write_icon"
             />
 
         <ImageView

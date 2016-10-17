@@ -1,5 +1,6 @@
 package mbc.fonfon.sun.solomonschoice;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -35,7 +36,7 @@ public class Mypage extends Fragment{
         TabHost.TabSpec spec;
 
         spec = tabHost.newTabSpec("Tab 00");
-        spec.setIndicator("내가쓴글");
+        spec.setIndicator("내가 쓴 글");
         spec.setContent(R.id.tabview1);
         tabHost.addTab(spec);
 
@@ -44,7 +45,11 @@ public class Mypage extends Fragment{
         spec.setContent(R.id.tabview2);
         tabHost.addTab(spec);
 
+
         tabHost.setCurrentTab(0);
+
+        tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab())
+                .setBackgroundColor(Color.parseColor("#5D5D5D"));
 
         return view;
     }
