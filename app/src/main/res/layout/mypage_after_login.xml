@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ABABAB"
+    android:background="#ffffff"
    >
 
     <RelativeLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.1"
         android:background="#EAEAEA"
         android:orientation="horizontal">
 
@@ -21,7 +21,6 @@
             android:layout_centerHorizontal="true"
             android:orientation="horizontal"
             >
-
             <TextView
                 android:id="@+id/solmon"
                 android:layout_width="wrap_content"
@@ -32,7 +31,18 @@
                 android:text="내 페이지"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#000000" />
+
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/settingBtn"
+            android:src="@drawable/setting_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:paddingRight="10dp" />
 
     </RelativeLayout>
 
@@ -65,8 +75,14 @@
             android:paddingTop="10dp"
             android:text="닉네임"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#8C8C8C" />
+            android:textColor="#8C8C8C" >
 
+        </TextView>
+
+        <!--<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/settingBtn"/>-->
 
     </LinearLayout>
 

@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 /**
  * Created by soldesk on 2016-10-07.
  */
-public class Alramboard extends Fragment {
+public class Writeboard extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.alram_board,container,false);
+        return inflater.inflate(R.layout.write_board,container,false);
     }
 }

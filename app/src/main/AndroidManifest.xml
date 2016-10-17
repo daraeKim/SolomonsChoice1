@@ -21,6 +21,9 @@
 
         <activity android:name=".LoginPage">
         </activity>
+
+        <activity android:name=".AccountSetting">
+        </activity>
     </application>
 
 </manifest>

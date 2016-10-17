@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
                 newFragment = new Bestboard();
                 break;
             case FRAGMENT_ALRAM:
-                newFragment = new Alramboard();
+                newFragment = new Writeboard();
                 break;
             case FRAGMENT_MYPAGE:
                 newFragment = new Mypage();
