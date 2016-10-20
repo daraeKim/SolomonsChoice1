@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="#ffffff"
+    android:background="#ffffff"
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,17 +10,24 @@ android:background="#ffffff"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
+    <ImageView
+        android:layout_width="51dp"
+        android:layout_height="64dp"
+        android:src="@drawable/back2"
+        android:layout_gravity="top"
+        android:id="@+id/back2"/>
     <LinearLayout
         android:id="@+id/loginLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
-        android:gravity="center">
-
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="1">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/solomon_5" />
+            android:src="@drawable/solomon_logo" />
     </LinearLayout>
 
     <mbc.fonfon.sun.solomonschoice.ClearEditText
@@ -46,7 +53,7 @@ android:background="#ffffff"
         android:layout_weight="2"
         android:backgroundTint="@color/colorAccent"
         android:ems="12"
-        android:hint="Password"
+        android:hint="비밀번호"
         android:inputType="textPassword"
         android:textColor="#000000"
         android:textColorHint="#000000"
@@ -65,16 +72,16 @@ android:background="#ffffff"
         android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/textView01"
+        android:id="@+id/search_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:gravity="center"
-        android:text="비밀번호를 잃어버리셨나요?"
+        android:text="비밀번호를 잊으셨나요?"
         android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/textView02"
+        android:id="@+id/member_join"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="3"

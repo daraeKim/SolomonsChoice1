@@ -24,7 +24,7 @@ public class MainBoard extends Fragment {
     ImageView icon;
 
     @Override
-    public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_board, container, false);
 
         first = (Button) view.findViewById(R.id.first);
@@ -68,8 +68,10 @@ public class MainBoard extends Fragment {
                             icon.setImageResource(android.R.drawable.arrow_down_float);
                             selectmenu.setVisibility(View.GONE);
                             viewGroupIsVisible = !viewGroupIsVisible;
+
                         }
                     });
+
 
                     second.setOnClickListener(new View.OnClickListener() {
                         @Override

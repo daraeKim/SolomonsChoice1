@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+   >
+
+    <LinearLayout
+        android:id="@+id/layout_join"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="1"
+    >
+
+    <ImageView
+        android:id="@+id/user_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:adjustViewBounds="true"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp"
+        android:src="@drawable/join_profile_icon"
+         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="10dp"
+        android:layout_weight="5"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <mbc.fonfon.sun.solomonschoice.ClearEditText
+                android:id="@+id/email"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:ems="12"
+                android:hint="이메일 주소를 입력해 주세요"
+                android:inputType="textEmailAddress"
+                android:layout_weight="10"
+                android:textColor="#000000"
+                android:textColorHint="#8C8C8C"
+                android:textCursorDrawable="@null"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="중복확인"
+                android:id="@+id/emailCheck"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <mbc.fonfon.sun.solomonschoice.ClearEditText
+                android:id="@+id/nickName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:ems="12"
+                android:layout_weight="10"
+                android:hint="닉네임"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textColorHint="#8C8C8C"
+                android:textCursorDrawable="@null"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:text="중복확인"
+                android:id="@+id/nickCheck"/>
+        </LinearLayout>
+
+        <mbc.fonfon.sun.solomonschoice.ClearEditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:maxLength="3"
+            android:hint="나이(숫자만 입력)"
+            android:singleLine = "true"
+            android:lines = "1"
+            android:inputType="number"
+            android:digits="0123456789"
+            android:layout_weight="0.5"
+            android:textColor="#000000"
+            android:textColorHint="#8C8C8C"
+            android:textCursorDrawable="@null"/>
+
+
+
+
+        <mbc.fonfon.sun.solomonschoice.ClearEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:ems="12"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:layout_weight="0.5"
+            android:textColor="#000000"
+            android:textColorHint="#8C8C8C"
+            android:textCursorDrawable="@null"/>
+
+
+        <mbc.fonfon.sun.solomonschoice.ClearEditText
+            android:id="@+id/passwordConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:ems="12"
+            android:hint="비밀번호 확인"
+            android:inputType="textPassword"
+            android:layout_weight="0.5"
+            android:textColor="#000000"
+            android:textColorHint="#8C8C8C"
+            android:textCursorDrawable="@null"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="0.7"
+            android:paddingBottom="30dp"
+            android:paddingTop="10dp"
+            >
+
+            <Button
+                android:id="@+id/gender_m"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="남자"
+                android:layout_weight="1"
+                android:background="@drawable/button_style3"
+                />
+
+            <Button
+                android:id="@+id/gender_w"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:text="여자"
+                android:layout_weight="1"
+                android:background="@drawable/button_style3"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/join_ok"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:text="가입 완료"
+            android:layout_weight="0.4"
+            android:background="@drawable/button_style"
+            />
+
+    </LinearLayout>
+</LinearLayout>
