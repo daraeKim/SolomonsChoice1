@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 
@@ -213,6 +214,8 @@ public class Join extends AppCompatActivity implements View.OnClickListener {
                 break;
 
             case R.id.join_ok:
+                finish();
+                Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.layout_join:
