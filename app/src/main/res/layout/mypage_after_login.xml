@@ -63,7 +63,7 @@
             android:layout_gravity="center"
             android:layout_weight="10"
             android:paddingTop="10dp"
-            android:src="@drawable/join_profile_icon"
+            android:src="@drawable/loginicon"
             android:id="@+id/change_pic"/>
 
         <TextView

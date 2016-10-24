@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#ffffff"
-   >
+    android:background="#ffffff">
 
     <LinearLayout
         android:id="@+id/layout_join"
@@ -16,7 +16,7 @@
         android:weightSum="1"
     >
 
-    <ImageView
+    <com.github.siyamed.shapeimageview.CircularImageView
         android:id="@+id/user_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -25,7 +25,9 @@
         android:adjustViewBounds="true"
         android:maxHeight="100dp"
         android:maxWidth="100dp"
-        android:src="@drawable/join_profile_icon"
+        android:src="@drawable/join_profile_icon2"
+        app:siBorderWidth="6dp"
+        app:siBorderColor="#ffffff"
          />
     </LinearLayout>
 
@@ -108,9 +110,6 @@
             android:textColor="#000000"
             android:textColorHint="#8C8C8C"
             android:textCursorDrawable="@null"/>
-
-
-
 
         <mbc.fonfon.sun.solomonschoice.ClearEditText
             android:id="@+id/password"
