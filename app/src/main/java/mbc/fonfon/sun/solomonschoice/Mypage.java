@@ -23,11 +23,13 @@ public class Mypage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.mypage_after_login, container, false);
+       //View view = inflater.inflate(R.layout.mypage_after_login, container, false);
+       View view = inflater.inflate(R.layout.mypage, container, false);
 
-/*
+
         // 로그인 하기 전 화면
         LoginBtn = (Button) view.findViewById(R.id.LoginBtn);
+
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,12 +37,14 @@ public class Mypage extends Fragment {
                  startActivity(intent);
             }
         });
-        */
+
+
+
 
 
         // 로그인 한 후 화면
 
-        settingBtn = (ImageView) view.findViewById(R.id.settingBtn);
+        /*settingBtn = (ImageView) view.findViewById(R.id.settingBtn);
         settingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +92,12 @@ public class Mypage extends Fragment {
         tabHost.addTab(spec);
 
         tabHost.setCurrentTab(1);
-        tabHost.setCurrentTab(0);
+        tabHost.setCurrentTab(0);*/
+
+
+       //여기까지
+
+
 
         return view;
     }

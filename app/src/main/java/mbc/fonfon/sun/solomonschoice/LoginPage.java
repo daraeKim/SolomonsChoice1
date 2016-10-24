@@ -26,7 +26,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.login);     //로그인메인화면 xml 파일 불러옴
 
         mainLayout = (LinearLayout) findViewById(R.id.loginLayout);
         etMail = (EditText) findViewById(R.id.etMail);
