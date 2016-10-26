@@ -33,3 +33,5 @@ public class Writeboard extends Fragment {
         return view;
     }
 }
+
+

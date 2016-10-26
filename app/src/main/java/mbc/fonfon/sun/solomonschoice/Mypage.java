@@ -23,19 +23,19 @@ public class Mypage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.mypage_after_login, container, false);
+       View view = inflater.inflate(R.layout.mypage_after_login, container, false);
 
-/*
-        // 로그인 하기 전 화면
+
+     /*   // 로그인 하기 전 화면
         LoginBtn = (Button) view.findViewById(R.id.LoginBtn);
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 Intent intent = new Intent(getActivity() , LoginPage.class);
-                 startActivity(intent);
+                 Intent intent = new Intent(getActivity() , LoginPage.class);\
+                startActivity(intent);
             }
         });
-        */
+*/
 
 
         // 로그인 한 후 화면
